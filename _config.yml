@@ -1,3 +1,9 @@
-title: vittorio
-description: blog
+title: vittoriomta
+description: italian, programmer, use movies to experience alternative realities.
+theme: minima
 permalink: /blog/:title/
+
+minima:
+  social_links:
+    - { platform: twitter, user_url: "https://twitter.com/vittoriomta" }
+    - { platform: github, user_url: "https://github.com/vittoriomta" }
