@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: site.title }}</title>
+    <style>
+        body {
+            background: white;
+            color: black;
+            max-width: 650px;
+            margin: 40px auto;
+            padding: 0 20px;
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+        }
+        a { color: black; text-decoration: underline; }
+        footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid black;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    {{ content }}
+    <footer>
+        <p>A bit about me: italian, programmer, use movies to experience alternative realities.</p>
+        <p><a href="https://twitter.com/vittoriomta">twitter</a> / <a href="https://github.com/vittoriomta">github</a></p>
+    </footer>
+</body>
+</html>
