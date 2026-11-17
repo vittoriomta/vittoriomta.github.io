@@ -59,7 +59,7 @@ The imports list only the components the sketch actually uses, at your alias. Li
 
 shadcn gives you atoms: a button, a card, an input. A full template gives you someone else's product. What's missing is the middle: the sections AI-native products are actually assembled from. A header with its actions, a sidebar with its account menu, a composer, a chat panel on the right or along the bottom, a chart panel with its sort controls, an API console.
 
-That middle is where taste lives, and it's what agents get wrong most often. So sketchcn ships 66 of them, each in a few variants that differ in layout, not just in copy.
+That middle is where taste lives, and it's what agents get wrong most often. So sketchcn ships 67 of them, each in a few variants that differ in layout, not just in copy.
 
 <figure class="sk-figure">
   <div class="sk-demo" data-demo="composers" aria-label="Three composer variants morphing into each other"></div>

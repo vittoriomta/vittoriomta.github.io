@@ -1,0 +1,202 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "sketchcn",
+  "homepage": "https://vittoriotaucer.github.io/projects/sketchcn/",
+  "items": [
+    {
+      "name": "sketchcn",
+      "type": "registry:block",
+      "title": "sketchcn",
+      "description": "Sketch screens with your own shadcn components and hand them to your coding agent.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "accordion",
+        "alert",
+        "attachment",
+        "avatar",
+        "badge",
+        "breadcrumb",
+        "bubble",
+        "button",
+        "button-group",
+        "calendar",
+        "card",
+        "checkbox",
+        "code-block",
+        "command",
+        "input",
+        "input-group",
+        "input-otp",
+        "item",
+        "kbd",
+        "label",
+        "marker",
+        "message",
+        "pagination",
+        "progress",
+        "questionnaire",
+        "radio-group",
+        "select",
+        "separator",
+        "skeleton",
+        "slider",
+        "spinner",
+        "switch",
+        "table",
+        "tabs",
+        "textarea",
+        "toggle-group",
+        "trace"
+      ],
+      "files": [
+        {
+          "path": "src/sketchcn/block-list.tsx",
+          "type": "registry:component",
+          "target": "components/sketchcn/block-list.tsx"
+        },
+        {
+          "path": "src/sketchcn/blocks-data.ts",
+          "type": "registry:lib",
+          "target": "components/sketchcn/blocks-data.ts"
+        },
+        {
+          "path": "src/sketchcn/blocks.ts",
+          "type": "registry:lib",
+          "target": "components/sketchcn/blocks.ts"
+        },
+        {
+          "path": "src/sketchcn/canvas.tsx",
+          "type": "registry:component",
+          "target": "components/sketchcn/canvas.tsx"
+        },
+        {
+          "path": "src/sketchcn/chrome.tsx",
+          "type": "registry:component",
+          "target": "components/sketchcn/chrome.tsx"
+        },
+        {
+          "path": "src/sketchcn/commands.tsx",
+          "type": "registry:component",
+          "target": "components/sketchcn/commands.tsx"
+        },
+        {
+          "path": "src/sketchcn/drag.tsx",
+          "type": "registry:component",
+          "target": "components/sketchcn/drag.tsx"
+        },
+        {
+          "path": "src/sketchcn/format.ts",
+          "type": "registry:lib",
+          "target": "components/sketchcn/format.ts"
+        },
+        {
+          "path": "src/sketchcn/gallery.tsx",
+          "type": "registry:component",
+          "target": "components/sketchcn/gallery.tsx"
+        },
+        {
+          "path": "src/sketchcn/icons.ts",
+          "type": "registry:lib",
+          "target": "components/sketchcn/icons.ts"
+        },
+        {
+          "path": "src/sketchcn/index.ts",
+          "type": "registry:lib",
+          "target": "components/sketchcn/index.ts"
+        },
+        {
+          "path": "src/sketchcn/inspector.tsx",
+          "type": "registry:component",
+          "target": "components/sketchcn/inspector.tsx"
+        },
+        {
+          "path": "src/sketchcn/kit-ai.tsx",
+          "type": "registry:component",
+          "target": "components/sketchcn/kit-ai.tsx"
+        },
+        {
+          "path": "src/sketchcn/kit-app.tsx",
+          "type": "registry:component",
+          "target": "components/sketchcn/kit-app.tsx"
+        },
+        {
+          "path": "src/sketchcn/kit-base.tsx",
+          "type": "registry:component",
+          "target": "components/sketchcn/kit-base.tsx"
+        },
+        {
+          "path": "src/sketchcn/kit-more.tsx",
+          "type": "registry:component",
+          "target": "components/sketchcn/kit-more.tsx"
+        },
+        {
+          "path": "src/sketchcn/kit.tsx",
+          "type": "registry:component",
+          "target": "components/sketchcn/kit.tsx"
+        },
+        {
+          "path": "src/sketchcn/output.ts",
+          "type": "registry:lib",
+          "target": "components/sketchcn/output.ts"
+        },
+        {
+          "path": "src/sketchcn/preset.ts",
+          "type": "registry:lib",
+          "target": "components/sketchcn/preset.ts"
+        },
+        {
+          "path": "src/sketchcn/presets-research.ts",
+          "type": "registry:lib",
+          "target": "components/sketchcn/presets-research.ts"
+        },
+        {
+          "path": "src/sketchcn/presets-shadcn.ts",
+          "type": "registry:lib",
+          "target": "components/sketchcn/presets-shadcn.ts"
+        },
+        {
+          "path": "src/sketchcn/preview.tsx",
+          "type": "registry:component",
+          "target": "components/sketchcn/preview.tsx"
+        },
+        {
+          "path": "src/sketchcn/regions.ts",
+          "type": "registry:component",
+          "target": "components/sketchcn/regions.ts"
+        },
+        {
+          "path": "src/sketchcn/sketch.tsx",
+          "type": "registry:component",
+          "target": "components/sketchcn/sketch.tsx"
+        },
+        {
+          "path": "src/sketchcn/store.ts",
+          "type": "registry:lib",
+          "target": "components/sketchcn/store.ts"
+        },
+        {
+          "path": "src/sketchcn/templates.ts",
+          "type": "registry:lib",
+          "target": "components/sketchcn/templates.ts"
+        },
+        {
+          "path": "src/sketchcn/theme-data.ts",
+          "type": "registry:lib",
+          "target": "components/sketchcn/theme-data.ts"
+        },
+        {
+          "path": "src/sketchcn/theme-panel.tsx",
+          "type": "registry:component",
+          "target": "components/sketchcn/theme-panel.tsx"
+        },
+        {
+          "path": "src/sketchcn/theme.ts",
+          "type": "registry:lib",
+          "target": "components/sketchcn/theme.ts"
+        }
+      ]
+    }
+  ]
+}

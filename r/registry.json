@@ -162,6 +162,11 @@
           "target": "components/sketchcn/preview.tsx"
         },
         {
+          "path": "src/sketchcn/regions.ts",
+          "type": "registry:component",
+          "target": "components/sketchcn/regions.ts"
+        },
+        {
           "path": "src/sketchcn/sketch.tsx",
           "type": "registry:component",
           "target": "components/sketchcn/sketch.tsx"
