@@ -8,7 +8,7 @@ ai_prompt: |
   Add sketchcn to this project and open it.
 
   1. Check that shadcn/ui is set up with Tailwind CSS v4. If it isn't, run `npx shadcn@latest init`.
-  2. Install it: `npx shadcn@latest add https://vittoriotaucer.github.io/r/sketchcn.json`
+  2. Install it: `npx shadcn@latest add https://vittoriomta.github.io/r/sketchcn.json`
   3. Render <Sketch /> from "@/components/sketchcn" once, at the root of the app, in development only. Vite: `{import.meta.env.DEV && <Sketch />}`. Next.js: wrap it in a "use client" component and check `process.env.NODE_ENV === "development"`.
   4. Start the dev server and give me the URL. I'll press S to open the canvas.
 ---
@@ -27,7 +27,7 @@ So sketchcn sketches with the components your project already has, and hands the
 ## Getting started
 
 ```bash
-npx shadcn@latest add https://vittoriotaucer.github.io/r/sketchcn.json
+npx shadcn@latest add https://vittoriomta.github.io/r/sketchcn.json
 ```
 
 It installs like any other shadcn component, into `components/sketchcn/`, along with the ui components it uses. Render it in development:
@@ -105,4 +105,4 @@ It installs through the shadcn registry, so it lives in your repo as ordinary so
   <div><code>onCopy</code><span>(prompt: string) =&gt; void</span><span></span></div>
 </div>
 
-The source is on [GitHub](https://github.com/vittoriotaucer/sketchcn), MIT licensed.
+The source is on [GitHub](https://github.com/vittoriomta/sketchcn), MIT licensed.

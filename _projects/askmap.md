@@ -82,4 +82,4 @@ I built and tested it on a sample of [WildChat](https://huggingface.co/datasets/
 - **Keyboard first.** <kbd>N</kbd> for a new map, <kbd>1</kbd>–<kbd>4</kbd> for views, <kbd>/</kbd> to search, <kbd>Esc</kbd> to step back.
 - **Quiet.** One screen to start, one accent for what needs attention.
 
-The source is on [GitHub](https://github.com/vittoriotaucer/askmap), MIT licensed.
+The source is on [GitHub](https://github.com/vittoriomta/askmap), MIT licensed.
