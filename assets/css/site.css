@@ -104,6 +104,17 @@ section {
   margin-top: 48px;
 }
 
+.introduction a {
+  text-decoration: underline;
+  text-decoration-color: var(--muted);
+  text-underline-offset: 3px;
+}
+
+.introduction a:hover {
+  color: var(--accent);
+  text-decoration-color: currentColor;
+}
+
 .section-heading {
   margin-bottom: 0;
   padding-bottom: 8px;
