@@ -24,4 +24,22 @@
     { rootMargin: "0px 0px -70% 0px" },
   )
   heads.forEach((h) => io.observe(h))
+
+  // Wide figures (like the playground) run under the margin: step aside while one overlaps.
+  const wide = [...document.querySelectorAll(".sk-wide, [data-toc-hide]")]
+  if (!wide.length) return
+  let raf = 0
+  const check = () => {
+    raf = 0
+    const n = nav.getBoundingClientRect()
+    const hit = wide.some((el) => {
+      const r = el.getBoundingClientRect()
+      return r.top < n.bottom + 24 && r.bottom > n.top - 24
+    })
+    nav.classList.toggle("is-hidden", hit)
+  }
+  const queue = () => raf || (raf = requestAnimationFrame(check))
+  addEventListener("scroll", queue, { passive: true })
+  addEventListener("resize", queue)
+  check()
 })()

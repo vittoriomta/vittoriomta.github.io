@@ -286,6 +286,16 @@ section {
     font-size: 13px;
   }
 
+  .toc {
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  .toc.is-hidden {
+    opacity: 0;
+    transform: translateX(-6px);
+    pointer-events: none;
+  }
+
   .toc a {
     color: var(--muted);
     opacity: 0.6;
