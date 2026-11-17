@@ -1,6 +1,6 @@
 ---
 layout: null
-title: Vittorio Marton
+title: Vittorio Taucer
 description: Software Engineer working on AI, based in Milan.
 ---
 <!doctype html>
@@ -11,16 +11,17 @@ description: Software Engineer working on AI, based in Milan.
     <meta name="description" content="{{ page.description }}">
     <meta name="theme-color" content="#14120b">
     <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+    <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v={{ site.time | date: '%s' }}">
   </head>
 
   <body>
     <main class="site-shell">
       <article class="introduction" aria-labelledby="name">
-        <h1 id="name">Vittorio Marton</h1>
+        <h1 id="name">Vittorio Taucer</h1>
         <p>I was born in Trieste, Italy, and now live in Milan.</p>
         <p>I'm a software engineer working on AI. I currently work independently as a forward deployed engineer, building custom software and AI agents from inside companies' teams. Previously I spent three years at PwC, building AI solutions for clients in logistics, finance and more.</p>
-        <p>I enjoy taking a messy process and turning it into something that just works: the interface people use, the cloud infrastructure underneath, and the agents in between.</p>
         <p>You can find me on <a class="inline" href="https://x.com/vittoriomta">X</a> and my code on <a class="inline" href="https://github.com/vittoriotaucer">GitHub</a>, or reach me via <a class="inline" href="mailto:vittorio.marton@outlook.it">email</a>.</p>
       </article>
 
@@ -43,6 +44,8 @@ description: Software Engineer working on AI, based in Milan.
         {% endif %}
       </section>
 
+      {% comment %} Writing is hidden until there's something to show. {% endcomment %}
+      {% comment %}
       <section aria-labelledby="writing-heading">
         <h2 id="writing-heading" class="section-heading">Writing</h2>
         {% assign writing = site.writing | sort: "date" | reverse %}
@@ -61,6 +64,7 @@ description: Software Engineer working on AI, based in Milan.
           <div class="empty-block" aria-label="No writing yet"></div>
         {% endif %}
       </section>
+      {% endcomment %}
     </main>
   </body>
 </html>

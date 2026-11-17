@@ -906,3 +906,81 @@
     animation: none !important;
   }
 }
+
+/* ── Prompt for your agent ───────────────────────────────────────── */
+
+.sk-agent {
+  margin: 24px 0 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.sk-agent-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 8px 8px 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.sk-agent-copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 78px;
+  justify-content: center;
+  padding: 4px 10px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s cubic-bezier(0.32, 0.72, 0, 1), filter 0.15s ease;
+}
+
+.sk-agent-copy:hover {
+  filter: brightness(1.08);
+}
+
+.sk-agent-copy:active {
+  transform: scale(0.96);
+}
+
+.sk-agent-copy .sk-swap i {
+  display: grid;
+  place-items: center;
+  transition: opacity 0.2s ease, transform 0.2s ease, filter 0.2s ease;
+}
+
+.sk-agent-copy .sk-swap i:last-child,
+.sk-agent-copy.done .sk-swap i:first-child {
+  opacity: 0;
+  transform: scale(0.5);
+  filter: blur(3px);
+}
+
+.sk-agent-copy.done .sk-swap i:last-child {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+.sk-agent .sk-agent-text {
+  margin: 0 !important;
+  padding: 12px 14px 14px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: var(--text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+}

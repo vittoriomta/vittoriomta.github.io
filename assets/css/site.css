@@ -105,13 +105,13 @@ section {
 }
 
 .introduction a {
+  color: var(--accent);
   text-decoration: underline;
-  text-decoration-color: var(--muted);
+  text-decoration-color: rgba(235, 86, 0, 0.4);
   text-underline-offset: 3px;
 }
 
 .introduction a:hover {
-  color: var(--accent);
   text-decoration-color: currentColor;
 }
 

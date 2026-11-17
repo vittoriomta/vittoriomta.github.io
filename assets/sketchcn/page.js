@@ -389,6 +389,36 @@
     );
   }
 
+  // The copyable prompt at the top of the page.
+  document.querySelectorAll(".sk-agent").forEach((box) => {
+    const btn = box.querySelector(".sk-agent-copy");
+    const label = btn.querySelector(".lbl");
+    const [a, b] = btn.querySelectorAll(".sk-swap i");
+    a.innerHTML = icon.copy;
+    b.innerHTML = icon.check;
+    let t = 0;
+    btn.addEventListener("click", async () => {
+      const text = box.querySelector(".sk-agent-text").textContent.trim();
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch {
+        const r = document.createRange();
+        r.selectNodeContents(box.querySelector(".sk-agent-text"));
+        getSelection().removeAllRanges();
+        getSelection().addRange(r);
+        document.execCommand("copy");
+        getSelection().removeAllRanges();
+      }
+      btn.classList.add("done");
+      label.textContent = "Copied";
+      clearTimeout(t);
+      t = setTimeout(() => {
+        btn.classList.remove("done");
+        label.textContent = "Copy";
+      }, 1600);
+    });
+  });
+
   const demos = { hero, tree, composers, steps };
   document.querySelectorAll(".sk-demo[data-demo]").forEach((el) => demos[el.dataset.demo]?.(el));
 })();

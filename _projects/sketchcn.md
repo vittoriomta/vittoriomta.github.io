@@ -8,12 +8,23 @@ toc: true
 
 sketchcn is a sketch tool for shadcn/ui. You drag your own components onto a screen, link screens into a flow, and copy a brief your coding agent can build without guessing.
 
+<div class="sk-agent">
+  <div class="sk-agent-head"><span>Prompt for your agent</span><button type="button" class="sk-agent-copy" aria-label="Copy prompt"><span class="sk-swap"><i></i><i></i></span><span class="lbl">Copy</span></button></div>
+  <pre class="sk-agent-text">Add sketchcn to this project and open it.
+
+1. Check that shadcn/ui is set up with Tailwind CSS v4. If it isn't, run `npx shadcn@latest init`.
+2. Install it: `npx shadcn@latest add https://vittoriotaucer.github.io/r/sketchcn.json`
+3. Render &lt;Sketch /&gt; from "@/components/sketchcn" once, at the root of the app, in development only. Vite: `{import.meta.env.DEV &amp;&amp; &lt;Sketch /&gt;}`. Next.js: wrap it in a "use client" component and check `process.env.NODE_ENV === "development"`.
+4. Start the dev server and give me the URL. I'll press S to open the canvas.</pre>
+</div>
+
+
 <figure class="sk-figure">
   <div class="sk-demo" data-demo="hero" aria-label="A part is dragged onto a screen, then the prompt is copied"></div>
   <figcaption>Drag a part in, copy the prompt. The agent gets your components, not a picture.</figcaption>
 </figure>
 
-I built this because describing a screen to an agent in words is slow and lossy. "A sidebar, a table of customers, a button that opens a form." The agent fills every gap with its own guesses, and those guesses look like every other generated app. Figma is too much for this. I don't need pixels, I need structure.<sup class="sk-fn"><a href="#fn-1" id="fnref-1">1</a></sup>
+I built this because describing a screen to an agent in words is slow and lossy. "A sidebar, a table of customers, a button that opens a form." The agent fills every gap with its own guesses, and those guesses look like every other generated app. Figma is too much for this. I don't need pixels, I need structure.
 
 So sketchcn sketches with the components your project already has, and hands the agent a tree instead of a paragraph.
 
@@ -71,7 +82,7 @@ None of the steps take long, and that's the point. The decisions that usually li
 
 Sometimes you want a whole app to start from. sketchcn has sixteen: a dashboard, mail, tasks, settings, auth, a database studio, an issue tracker, a booking page, a CRM, and a set of AI products: chat, an agent builder, a coding agent, an agent panel, and AI teammates on desktop and mobile.
 
-I didn't want these to be my guesses at what those apps look like. Each one was rebuilt from the layout code of an open-source app that does it well: Supabase Studio, Plane, Cal.com, Twenty, OpenHands, Cline, Open WebUI and others. The structure is theirs. The parts, copy and names are not.<sup class="sk-fn"><a href="#fn-2" id="fnref-2">2</a></sup>
+I didn't want these to be my guesses at what those apps look like. Each one was rebuilt from the layout code of an open-source app that does it well: Supabase Studio, Plane, Cal.com, Twenty, OpenHands, Cline, Open WebUI and others. The structure is theirs. The parts, copy and names are not.
 
 ## Try it
 
@@ -109,13 +120,4 @@ It installs through the shadcn registry, so it lives in your repo as ordinary so
   <div><code>onCopy</code><span>(prompt: string) =&gt; void</span><span></span></div>
 </div>
 
-## Acknowledgements
-
-Inspired by Benji Taylor's [Agentation](https://agentation.com), which showed how much an agent gains from being shown instead of told, and by [M3E Canvas](https://github.com/lnkiai/m3e-canvas), which proved people want to sketch before they prompt. Built on [shadcn/ui](https://ui.shadcn.com) and its new AI components.
-
 The source is on [GitHub](https://github.com/vittoriotaucer/sketchcn), MIT licensed.
-
-<ol class="sk-footnotes">
-  <li id="fn-1">It isn't a Figma replacement, and doesn't try to be. It's for deciding what goes where before anyone writes code. <a href="#fnref-1" aria-label="Back to text">↩</a></li>
-  <li id="fn-2">Some of those apps are AGPL. That's why only the layout was studied: no code, assets or branding came along. Every preset credits its sources. <a href="#fnref-2" aria-label="Back to text">↩</a></li>
-</ol>
