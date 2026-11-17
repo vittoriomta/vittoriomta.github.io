@@ -4,20 +4,16 @@ date: 2026-11-17
 description: "A sketch tool for shadcn/ui and coding agents."
 assets: sketchcn
 toc: true
+ai_prompt: |
+  Add sketchcn to this project and open it.
+
+  1. Check that shadcn/ui is set up with Tailwind CSS v4. If it isn't, run `npx shadcn@latest init`.
+  2. Install it: `npx shadcn@latest add https://vittoriotaucer.github.io/r/sketchcn.json`
+  3. Render <Sketch /> from "@/components/sketchcn" once, at the root of the app, in development only. Vite: `{import.meta.env.DEV && <Sketch />}`. Next.js: wrap it in a "use client" component and check `process.env.NODE_ENV === "development"`.
+  4. Start the dev server and give me the URL. I'll press S to open the canvas.
 ---
 
 sketchcn is a sketch tool for shadcn/ui. You drag your own components onto a screen, link screens into a flow, and copy a brief your coding agent can build without guessing.
-
-<div class="sk-agent">
-  <div class="sk-agent-head"><span>Prompt for your agent</span><button type="button" class="sk-agent-copy" aria-label="Copy prompt"><span class="sk-swap"><i></i><i></i></span><span class="lbl">Copy</span></button></div>
-  <pre class="sk-agent-text">Add sketchcn to this project and open it.
-
-1. Check that shadcn/ui is set up with Tailwind CSS v4. If it isn't, run `npx shadcn@latest init`.
-2. Install it: `npx shadcn@latest add https://vittoriotaucer.github.io/r/sketchcn.json`
-3. Render &lt;Sketch /&gt; from "@/components/sketchcn" once, at the root of the app, in development only. Vite: `{import.meta.env.DEV &amp;&amp; &lt;Sketch /&gt;}`. Next.js: wrap it in a "use client" component and check `process.env.NODE_ENV === "development"`.
-4. Start the dev server and give me the URL. I'll press S to open the canvas.</pre>
-</div>
-
 
 <figure class="sk-figure">
   <div class="sk-demo" data-demo="hero" aria-label="A part is dragged onto a screen, then the prompt is copied"></div>
@@ -83,17 +79,6 @@ None of the steps take long, and that's the point. The decisions that usually li
 Sometimes you want a whole app to start from. sketchcn has sixteen: a dashboard, mail, tasks, settings, auth, a database studio, an issue tracker, a booking page, a CRM, and a set of AI products: chat, an agent builder, a coding agent, an agent panel, and AI teammates on desktop and mobile.
 
 I didn't want these to be my guesses at what those apps look like. Each one was rebuilt from the layout code of an open-source app that does it well: Supabase Studio, Plane, Cal.com, Twenty, OpenHands, Cline, Open WebUI and others. The structure is theirs. The parts, copy and names are not.
-
-## Try it
-
-<figure class="sk-figure sk-wide">
-  <div class="sk-play">
-    <iframe src="/play/sketchcn/" title="sketchcn playground" loading="lazy"></iframe>
-  </div>
-  <figcaption>The real thing. Press <kbd>T</kbd> for presets, or switch to Blocks on the left. <a href="/play/sketchcn/" target="_blank" rel="noopener">Open full screen</a></figcaption>
-</figure>
-
-Everything stays in your browser. Nothing leaves your machine until you copy it.
 
 ## Details
 

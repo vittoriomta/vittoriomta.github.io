@@ -1,0 +1,264 @@
+/* askmap project page: three live demos, the playground, and the sources list. */
+
+.am-figure {
+  margin: 32px 0 40px;
+}
+
+.am-figure figcaption {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+.am-figure figcaption a {
+  margin-left: 6px;
+}
+
+.am-demo {
+  --am-ease: cubic-bezier(0.32, 0.72, 0, 1);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.am-wide {
+  width: min(1100px, calc(100vw - 32px));
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ── Pipeline and friction maps ─────────────────────────────────────── */
+
+[data-demo="pipeline"],
+[data-demo="friction"] {
+  height: 320px;
+}
+
+.am-demo svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.am-dot {
+  transition: transform 0.9s var(--am-ease), opacity 0.4s ease, fill 0.5s ease;
+}
+
+.am-blob {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(0);
+  transition: transform 0.7s var(--am-ease), fill 0.6s ease, opacity 0.4s ease;
+}
+
+.am-blob.on {
+  transform: scale(1);
+}
+
+.am-ring {
+  fill: none;
+  stroke: #3a372f;
+  stroke-width: 1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.am-ring.on {
+  opacity: 1;
+}
+
+.am-label {
+  fill: var(--text);
+  font-size: 10.5px;
+  text-anchor: middle;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.am-label.on {
+  opacity: 0.9;
+}
+
+.am-cat {
+  fill: var(--muted);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.am-toggle {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  gap: 2px;
+  padding: 2px;
+  border-radius: 6px;
+  background: #2a2721;
+  font-size: 11px;
+}
+
+.am-toggle span {
+  padding: 3px 9px;
+  border-radius: 4px;
+  color: var(--muted);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.am-toggle span.on {
+  background: #3a372f;
+  color: var(--text);
+}
+
+/* ── Redaction ──────────────────────────────────────────────────────── */
+
+[data-demo="redact"] {
+  display: grid;
+  gap: 14px;
+  padding: 22px 22px 24px;
+}
+
+.am-chat {
+  display: grid;
+  gap: 8px;
+  transition: opacity 0.5s ease, filter 0.5s ease;
+}
+
+.am-chat.fade {
+  opacity: 0.25;
+  filter: blur(1.5px);
+}
+
+.am-bubble {
+  max-width: 88%;
+  padding: 9px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.am-bubble.u {
+  justify-self: end;
+  background: #2a2721;
+  color: var(--text);
+}
+
+.am-bubble.a {
+  justify-self: start;
+  color: #c9c7c2;
+}
+
+.am-pii {
+  border-radius: 3px;
+  transition: background-color 0.3s ease, color 0.3s ease, filter 0.4s ease, opacity 0.4s ease;
+}
+
+.am-pii.mark {
+  background: rgba(235, 86, 0, 0.22);
+  color: #ff9a5c;
+}
+
+.am-pii.gone {
+  filter: blur(4px);
+  opacity: 0.35;
+}
+
+.am-summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--background);
+  font-size: 13px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.4s ease, transform 0.5s var(--am-ease);
+}
+
+.am-summary.on {
+  opacity: 1;
+  transform: none;
+}
+
+.am-summary i {
+  width: 6px;
+  height: 6px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.am-steps {
+  display: flex;
+  gap: 16px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.am-steps span {
+  transition: color 0.3s ease;
+}
+
+.am-steps span.on {
+  color: var(--text);
+}
+
+/* ── Sources, playground ────────────────────────────────────────────── */
+
+.am-rows {
+  margin: 4px 0 20px;
+  border-top: 1px solid var(--border);
+}
+
+.am-rows div {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.am-rows span + span {
+  color: var(--muted);
+}
+
+.am-play {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.am-play iframe {
+  display: block;
+  width: 100%;
+  height: 640px;
+  border: 0;
+}
+
+@media (max-width: 640px) {
+  .am-rows div {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .am-play iframe {
+    height: 520px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .am-demo *,
+  .am-demo *::before,
+  .am-demo *::after {
+    transition-duration: 0s !important;
+  }
+}
