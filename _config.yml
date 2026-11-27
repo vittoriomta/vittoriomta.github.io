@@ -1,0 +1,46 @@
+title: Vittorio Marton
+description: Software Engineer working on AI, based in Milan.
+url: https://vittoriomta.github.io
+baseurl: ""
+lang: en_US
+author:
+  name: Vittorio Marton
+  twitter: vmtauu
+twitter:
+  username: vmtauu
+  card: summary_large_image
+social:
+  name: Vittorio Marton
+  links:
+    - https://x.com/vmtauu
+    - https://github.com/vittoriomta
+logo: /assets/img/vittorio.jpg
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+exclude:
+  - CONTENT_GUIDE.md
+  - Gemfile
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+    sort_by: date
+  writing:
+    output: true
+    permalink: /writing/:name/
+    sort_by: date
+
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: entry
+  - scope:
+      path: ""
+      type: writing
+    values:
+      layout: entry

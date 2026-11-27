@@ -1,0 +1,4 @@
+# Items of the "Other" list on the homepage, in order: a name, where it links, and a short description.
+- name: FastSheet
+  url: https://github.com/vittoriomta/fastsheet
+  description: A fast, native Excel-like spreadsheet for Apple silicon Macs

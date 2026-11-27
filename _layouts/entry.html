@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#14120b">
+    {% seo %}
+    <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+    {% if page.assets %}<link rel="stylesheet" href="{{ '/assets/' | append: page.assets | append: '/page.css' | relative_url }}?v={{ site.time | date: '%s' }}">{% endif %}
+    <script>document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";</script>
+  </head>
+
+  <body>
+    <main class="site-shell">
+      <a class="back-link" href="{{ '/' | relative_url }}">← Back</a>
+
+      <article>
+        <header class="entry-header">
+          <h1>{{ page.title }}</h1>
+          {% if page.ai_prompt %}<button type="button" class="ai-copy" data-copied="Copied">Copy AI instructions</button>
+          <textarea class="ai-prompt" hidden>{{ page.ai_prompt | strip | escape }}</textarea>{% endif %}
+        </header>
+
+        <div class="prose">
+          {{ content }}
+        </div>
+      </article>
+      {% if page.toc %}<nav class="toc" aria-label="On this page"></nav>{% endif %}
+      <footer class="site-footer">
+        <span></span>
+        <span></span>
+        <div class="switch" role="group" aria-label="Theme">
+          <button type="button" data-set-theme="light">light</button><span>/</span><button type="button" data-set-theme="dark">dark</button>
+        </div>
+      </footer>
+    </main>
+    <script>
+      document.querySelectorAll("[data-set-theme]").forEach(function (b) {
+        b.onclick = function () { document.documentElement.dataset.theme = b.dataset.setTheme; localStorage.setItem("theme", b.dataset.setTheme); };
+      });
+    </script>
+    {% if page.toc %}<script src="{{ '/assets/js/toc.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>{% endif %}
+    {% if page.ai_prompt %}<script src="{{ '/assets/js/ai-copy.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>{% endif %}
+    {% if page.assets %}<script src="{{ '/assets/' | append: page.assets | append: '/page.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>{% endif %}
+  </body>
+</html>

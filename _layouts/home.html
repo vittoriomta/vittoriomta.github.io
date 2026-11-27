@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="{{ page.lang | default: 'en' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#14120b">
+    {% seo title=false %}
+    <title>{{ page.title }}</title>
+    <link rel="alternate" hreflang="en" href="{{ '/' | absolute_url }}">
+    <link rel="alternate" hreflang="it" href="{{ '/it/' | absolute_url }}">
+    <link rel="alternate" hreflang="x-default" href="{{ '/' | absolute_url }}">
+    <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+    <script>
+      (function () {
+        var d = document.documentElement, q = new URLSearchParams(location.search);
+        {% if page.lang == "it" %}var lang = q.get("lang") || "it";{% else %}var lang = q.get("lang") || localStorage.getItem("lang") || "en";{% endif %}
+        d.lang = lang;
+        d.dataset.theme = localStorage.getItem("theme") || "light";
+      })();
+    </script>
+  </head>
+
+  <body>
+    <main class="site-shell layout">
+      <aside class="side">
+        <img class="portrait" src="{{ '/assets/img/vittorio.jpg' | relative_url }}" alt="Vittorio Marton" width="140" height="151">
+        <ul class="contact">
+          <li><span lang="en">Milan, Italy</span><span lang="it">Milano, Italia</span></li>
+          <li><span class="mail">vittorio.marton[at]outlook[dot]it</span></li>
+          <li><a href="https://x.com/vmtauu">X</a> · <a href="https://github.com/vittoriomta">GitHub</a></li>
+        </ul>
+      </aside>
+      <div class="main-col">
+      <article class="introduction" aria-labelledby="name">
+        <h1 id="name">Vittorio Marton</h1>
+        <p lang="en">Born in Italy, living in Milan. When I'm not working, I'm probably watching a movie.</p>
+        <p lang="it">Sono nato in Italia e vivo a Milano. Se non sto lavorando, probabilmente sto guardando un film.</p>
+        <p lang="en">I'm a software engineer working on AI, now independent as a forward deployed engineer: I work with companies' teams and integrate AI into their systems. Previously I spent three years at PwC, building AI solutions for clients in logistics, finance and more.</p>
+        <p lang="it">Sono un programmatore e mi occupo di intelligenza artificiale. Oggi lavoro in proprio come <em>forward deployed engineer</em>: affianco i team delle aziende e costruisco con loro soluzioni AI. Prima ho passato tre anni in PwC, sviluppando progetti AI per clienti nella logistica, nella finanza e in altri settori.</p>
+        <p lang="en">You can find me on <a class="inline" href="https://x.com/vmtauu">X</a> and my code on <a class="inline" href="https://github.com/vittoriomta">GitHub</a>, or reach me via <a class="inline" href="mailto:vittorio.marton@outlook.it">email</a>.</p>
+        <p lang="it">Mi trovate su <a class="inline" href="https://x.com/vmtauu">X</a>, il mio codice è su <a class="inline" href="https://github.com/vittoriomta">GitHub</a>, oppure potete scrivermi un'<a class="inline" href="mailto:vittorio.marton@outlook.it">email</a>.</p>
+      </article>
+
+      {% assign projects = site.projects | sort: "date" | reverse %}
+      {% if projects.size > 0 %}
+      <section aria-labelledby="projects-heading">
+        <h2 id="projects-heading" class="section-heading">Projects</h2>
+        <ul class="entry-list">
+          {% for project in projects %}
+            <li>
+              <a href="{{ project.url | relative_url }}">
+                <span>{{ project.title }}</span>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+      {% endif %}
+
+      {% assign writing = site.writing | sort: "date" | reverse %}
+      {% if writing.size > 0 %}
+      <section aria-labelledby="writing-heading">
+        <h2 id="writing-heading" class="section-heading">Posts</h2>
+        <ul class="entry-list">
+          {% for article in writing %}
+            <li>
+              <a href="{{ article.url | relative_url }}">
+                <span>{{ article.title }}</span>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+      {% endif %}
+
+      {% if site.data.other and site.data.other.size > 0 %}
+      <section aria-labelledby="other-heading">
+        <h2 id="other-heading" class="section-heading">Other</h2>
+        <ul class="entry-list">
+          {% for item in site.data.other %}
+            <li>
+              <a href="{{ item.url }}">
+                <span>{{ item.name }}: {{ item.description }}</span>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+      {% endif %}
+      </div>
+      <footer class="site-footer">
+        <div class="switch" role="group" aria-label="Language">
+          <button type="button" data-set-lang="it">it</button><span>/</span><button type="button" data-set-lang="en">en</button>
+        </div>
+        <span class="vat">P.IVA 01455190320</span>
+        <div class="switch" role="group" aria-label="Theme">
+          <button type="button" data-set-theme="light">light</button><span>/</span><button type="button" data-set-theme="dark">dark</button>
+        </div>
+      </footer>
+    </main>
+    <script>
+      document.querySelectorAll("[data-set-lang]").forEach(function (b) {
+        b.onclick = function () { document.documentElement.lang = b.dataset.setLang; localStorage.setItem("lang", b.dataset.setLang); };
+      });
+      document.querySelectorAll("[data-set-theme]").forEach(function (b) {
+        b.onclick = function () { document.documentElement.dataset.theme = b.dataset.setTheme; localStorage.setItem("theme", b.dataset.setTheme); };
+      });
+    </script>
+  </body>
+</html>
